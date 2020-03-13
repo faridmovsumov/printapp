@@ -6,9 +6,15 @@ if(empty($question)){
     exit;
 }
 
+if(substr( $question, 0, 6 ) !== "print "){
+    exit;
+}
+
+$temp = explode("print ", $question);
+
 $response = [
     "type" => "text",
-    "text" => strrev($question),
+    "text" => $temp[1],
     "media" => null,
 ];
 
