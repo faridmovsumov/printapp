@@ -18,7 +18,7 @@ if(empty($temp[1])){
 
 $message = $temp[1];
 
-$temp = explode(" ", $message, 1);
+$temp = explode(" ", $message, 2);
 
 $repeatNumber = (int) $temp[0];
 $message = $temp[1];
