@@ -20,7 +20,7 @@ $message = $temp[1];
 
 $temp = explode(" ", $message, 2);
 
-if(count($temp) === 1){
+if (count($temp) === 1) {
     $response = [
         "type" => "text",
         "text" => $temp[0],
