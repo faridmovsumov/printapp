@@ -20,6 +20,16 @@ $message = $temp[1];
 
 $temp = explode(" ", $message, 2);
 
+if(count($temp) === 1){
+    $response = [
+        "type" => "text",
+        "text" => $temp[0],
+        "media" => null,
+    ];
+
+    echo json_encode($response);
+}
+
 $repeatNumber = (int)$temp[0];
 $message = $temp[1];
 
