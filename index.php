@@ -18,12 +18,12 @@ if (empty($temp[1])) {
 
 $message = $temp[1];
 
-$temp = explode(" ", $message, 2);
+$temp = explode(" ", $message);
 
 if (count($temp) === 1) {
     $response = [
         "type" => "text",
-        "text" => $temp[0],
+        "text" => $message,
         "media" => null,
     ];
 
@@ -31,8 +31,20 @@ if (count($temp) === 1) {
     exit;
 }
 
+$repeatNumber = $temp[0];
 
-$repeatNumber = (int)$temp[0];
+if(!is_numeric($repeatNumber)){
+    $response = [
+        "type" => "text",
+        "text" => $message,
+        "media" => null,
+    ];
+
+    echo json_encode($response);
+    exit;
+}
+
+$repeatNumber = (int) $repeatNumber;
 $message = $temp[1];
 
 if ($repeatNumber > 10) {
