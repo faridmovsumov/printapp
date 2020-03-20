@@ -28,7 +28,9 @@ if(count($temp) === 1){
     ];
 
     echo json_encode($response);
+    exit;
 }
+
 
 $repeatNumber = (int)$temp[0];
 $message = $temp[1];
