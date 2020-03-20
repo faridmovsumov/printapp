@@ -45,10 +45,17 @@ if(!is_numeric($repeatNumber)){
 }
 
 $repeatNumber = (int) $repeatNumber;
-$message = $temp[1];
 
 if ($repeatNumber > 10) {
     $repeatNumber = 10;
+}
+
+$message = explode(" ", $message, 2);
+
+if(count($message) === 1){
+    $message = $message[0];
+}else{
+    $message = $message[1];
 }
 
 $response = [
